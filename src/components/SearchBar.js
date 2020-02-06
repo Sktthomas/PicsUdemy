@@ -2,10 +2,11 @@ import React from 'react'
 
 class SearchBar extends React.Component {
 
-    //it is community standard to call event handlers this way.
+    state= {term: 'Hi there!'};
+  /*  //it is community standard to call event handlers this way.
     onInputChange(event) { //We pass the event object gathered from the inputChange event
         
-    }
+    } */
 
     render() {
         return (
@@ -13,10 +14,11 @@ class SearchBar extends React.Component {
             <form className="ui form">
                 <div className="field">
                 <label>Image Search</label>
-                <input type="text"onChange={this.onInputChange}/> {/*You can also use an arrow function instead of calling onInputChange*/}
+                <input type="text"
+                    value={this.state.term} //by making the value of the input our state, we make it controlled, since we know, via React, what it is.
+                    onChange={(e) => this.setState({term: e.target.value}) }/> {/*You can also use an arrow function instead of calling onInputChange*/}
                 </div>
             </form>
-
         </div>
         )
     }
