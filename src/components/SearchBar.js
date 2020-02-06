@@ -2,7 +2,7 @@ import React from 'react'
 
 class SearchBar extends React.Component {
 
-    state= {term: 'Hi there!'};
+    state= {term: ''};
   /*  //it is community standard to call event handlers this way.
     onInputChange(event) { //We pass the event object gathered from the inputChange event
         
